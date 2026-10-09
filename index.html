@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm hiểu Ngày Công dân số Việt Nam 15/10</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        * {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .font-cyber {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Custom animated digital grid background */
+        .digital-grid {
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+        }
+        /* Pulse glow effect */
+        @keyframes cyberGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.2); }
+            50% { box-shadow: 0 0 35px rgba(99, 102, 241, 0.6), inset 0 0 15px rgba(99, 102, 241, 0.3); }
+        }
+        .cyber-glow {
+            animation: cyberGlow 4s infinite ease-in-out;
+        }
+        /* Option selection animations */
+        .choice-btn {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .choice-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen digital-grid flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+    <header class="w-full border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base md:text-lg tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent">
+                        NGÀY CÔNG DÂN SỐ VIỆT NAM
+                    </h1>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <p class="text-xs text-slate-400 font-medium">15 Tháng 10 • Chuyển Đổi Số Quốc Gia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sound toggle button -->
+            <button id="soundToggleBtn" class="flex items-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full text-xs font-medium border border-slate-700/60 transition-colors shadow-sm">
+                <i data-lucide="volume-2" id="soundIcon" class="w-4 h-4 text-cyan-400"></i>
+                <span id="soundText" class="hidden sm:inline">Âm thanh: Bật</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6">
+        <div class="w-full max-w-2xl">
+
+            <!-- 1. INTRO / START SCREEN -->
+            <div id="startScreen" class="bg-slate-900/85 backdrop-blur-xl border border-slate-800/90 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden text-center cyber-glow">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/50 text-cyan-400 text-xs font-semibold mb-6 uppercase tracking-wider">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    Thử Thách Nhận Thức Số
+                </div>
+
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                    Bạn Đã Sẵn Sàng Trở Thành <br>
+                    <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
+                        Công Dân Số Chuẩn Mực?
+                    </span>
+                </h2>
+
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-lg mx-auto">
+                    Ngày 15/10 hàng năm được chọn là mốc son khẳng định vai trò của mỗi người dân trong kỷ nguyên vươn mình số của Việt Nam. Hãy thử sức với 5 câu hỏi nhanh để kiểm tra hiểu biết của bạn!
+                </p>
+
+                <div class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-8 text-left">
+                    <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-3 text-center">
+                        <i data-lucide="help-circle" class="w-5 h-5 mx-auto mb-1 text-cyan-400"></i>
+                        <span class="block text-xs text-slate-400">Bộ câu hỏi</span>
+                        <span class="font-bold text-sm text-slate-100 font-cyber">5 Câu</span>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-3 text-center">
+                        <i data-lucide="clock" class="w-5 h-5 mx-auto mb-1 text-blue-400"></i>
+                        <span class="block text-xs text-slate-400">Thời gian</span>
+                        <span class="font-bold text-sm text-slate-100 font-cyber">30s / câu</span>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-3 text-center">
+                        <i data-lucide="award" class="w-5 h-5 mx-auto mb-1 text-amber-400"></i>
+                        <span class="block text-xs text-slate-400">Chứng nhận</span>
+                        <span class="font-bold text-sm text-slate-100 font-cyber">Huy Hiệu</span>
+                    </div>
+                </div>
+
+                <button id="startBtn" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-2xl shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2">
+                    <span>Bắt Đầu Thử Thách</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 2. QUIZ QUESTION SCREEN -->
+            <div id="quizScreen" class="hidden bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <!-- Top Progress Bar & Status -->
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 font-cyber" id="questionCounter">CÂU 1 / 5</span>
+                    </div>
+                    <!-- Countdown timer -->
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700">
+                        <i data-lucide="timer" class="w-4 h-4 text-amber-400"></i>
+                        <span id="timerText" class="font-cyber font-bold text-sm text-amber-400">30s</span>
+                    </div>
+                </div>
+
+                <!-- Progress line -->
+                <div class="w-full bg-slate-800 rounded-full h-2 mb-6 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all duration-300 w-1/5"></div>
+                </div>
+
+                <!-- Question Title -->
+                <div class="min-h-[72px] mb-6">
+                    <h3 id="questionText" class="text-lg sm:text-xl font-bold text-white leading-relaxed">
+                        Đang tải nội dung câu hỏi...
+                    </h3>
+                </div>
+
+                <!-- Choices Grid -->
+                <div id="optionsContainer" class="space-y-3 mb-6">
+                    <!-- Dynamic Answer Choices -->
+                </div>
+
+                <!-- Explanation Box (reveals after answering) -->
+                <div id="explanationBox" class="hidden mb-6 p-4 rounded-2xl border text-sm transition-all duration-300">
+                    <div class="flex items-start gap-3">
+                        <div id="explanationIcon" class="mt-0.5"></div>
+                        <div>
+                            <p id="explanationTitle" class="font-bold mb-1"></p>
+                            <p id="explanationText" class="text-slate-300 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Next Action -->
+                <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                    <div class="text-xs text-slate-400">
+                        Điểm hiện tại: <span id="currentScore" class="font-bold text-cyan-400 font-cyber">0</span>/5
+                    </div>
+                    <button id="nextBtn" class="hidden px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-xl text-sm transition-all inline-flex items-center gap-2">
+                        <span>Câu kế tiếp</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. RESULTS & RANKING SCREEN -->
+            <div id="resultScreen" class="hidden bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl text-center relative overflow-hidden">
+                <div class="inline-block p-4 rounded-3xl bg-slate-800/80 border border-slate-700/70 mb-5 relative">
+                    <div id="resultBadgeIcon" class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto rounded-2xl text-white">
+                        <i data-lucide="award" class="w-10 h-10 sm:w-12 sm:h-12"></i>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-1">KẾT QUẢ THỬ THÁCH</h2>
+                <p id="resultRankTitle" class="text-lg font-bold text-cyan-400 mb-4 font-cyber">DANH HIỆU: ĐANG ĐÁNH GIÁ</p>
+
+                <!-- Final Score Counter Card -->
+                <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-4 max-w-sm mx-auto mb-6">
+                    <div class="flex justify-around items-center divide-x divide-slate-700">
+                        <div class="px-3">
+                            <span class="text-xs text-slate-400 block">Số điểm đạt</span>
+                            <span id="finalScore" class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-cyber">0/5</span>
+                        </div>
+                        <div class="px-3">
+                            <span class="text-xs text-slate-400 block">Độ chính xác</span>
+                            <span id="finalAccuracy" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-cyber">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="resultDescription" class="text-sm text-slate-300 max-w-md mx-auto mb-8 leading-relaxed">
+                    Đánh giá nhận thức công dân số.
+                </p>
+
+                <!-- Action buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <button id="retryBtn" class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-xl text-sm transition-all inline-flex items-center justify-center gap-2">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                        <span>Thử Sức Lại</span>
+                    </button>
+                    <button id="shareBtn" class="w-full sm:w-auto px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold rounded-xl text-sm border border-slate-700 transition-all inline-flex items-center justify-center gap-2">
+                        <i data-lucide="share-2" class="w-4 h-4 text-cyan-400"></i>
+                        <span id="shareBtnText">Lan Tỏa Thông Điệp</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-slate-800/80 bg-slate-900/40 py-4 px-4 text-center">
+        <p class="text-xs text-slate-400">
+            Hưởng ứng phong trào <span class="text-cyan-400 font-medium">Toàn dân Chuyển đổi số</span> • Vì một Việt Nam văn minh, an toàn trên không gian số.
+        </p>
+    </footer>
+
+    <script>
+        class SoundFX {
+            constructor() {
+                this.enabled = true;
+                this.ctx = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtx) this.ctx = new AudioCtx();
+                }
+                if (this.ctx && this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playCorrect() {
+                if (!this.enabled) return;
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                
+                // Arpeggio sound for success
+                const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                notes.forEach((freq, index) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(freq, now + index * 0.08);
+
+                    gain.gain.setValueAtTime(0, now + index * 0.08);
+                    gain.gain.linearRampToValueAtTime(0.2, now + index * 0.08 + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + index * 0.08 + 0.25);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start(now + index * 0.08);
+                    osc.stop(now + index * 0.08 + 0.25);
+                });
+            }
+
+            playWrong() {
+                if (!this.enabled) return;
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                
+                // Low descending tone for incorrect
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(220, now);
+                osc.frequency.exponentialRampToValueAtTime(110, now + 0.3);
+
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            }
+
+            playClick() {
+                if (!this.enabled) return;
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(400, now + 0.05);
+
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+
+            playFinish() {
+                if (!this.enabled) return;
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                const chord = [440, 554.37, 659.25, 880];
+                chord.forEach(f => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(f, now);
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.8);
+                });
+            }
+        }
+
+        const sound = new SoundFX();
+    </script>
+
+    <script>
+        const quizQuestions = [
+            {
+                question: "Ý nghĩa cốt lõi của Ngày Công dân số 15/10 tại Việt Nam là gì?",
+                options: [
+                    "Kỷ niệm sự ra đời của chiếc máy tính cá nhân đầu tiên",
+                    "Tuyên truyền, phổ cập kỹ năng số và thúc đẩy mỗi cá nhân chủ động tham gia môi trường số an toàn, văn minh",
+                    "Chương trình giảm giá và khuyến mãi toàn quốc các thiết bị di động số",
+                    "Quy định bắt buộc mọi người dân phải từ bỏ sử dụng giấy tờ truyền thống"
+                ],
+                correctIndex: 1,
+                explanation: "Ngày Công dân số được đề xướng nhằm nâng cao nhận thức, trang bị kỹ năng số toàn diện và cổ vũ mọi tầng lớp nhân dân chủ động trở thành công dân số thông minh, an toàn và trách nhiệm."
+            },
+            {
+                question: "Bộ kỹ năng cốt lõi cơ bản của một Công dân số theo khung phát triển gồm những yếu tố nào?",
+                options: [
+                    "Chỉ cần biết sử dụng thành thạo điện thoại thông minh để giải trí",
+                    "Kỹ năng lập trình phần mềm chuyên sâu và quản trị máy chủ",
+                    "Kỹ năng truy cập thông tin, giao tiếp số, văn hóa ứng xử số, bảo vệ an toàn số và giải quyết vấn đề số",
+                    "Chỉ cần đăng ký duy nhất tài khoản mạng xã hội để bình luận"
+                ],
+                correctIndex: 2,
+                explanation: "Công dân số cần chuẩn mực 5 nhóm kỹ năng then chốt: Khả năng tìm kiếm/đánh giá thông tin, giao tiếp & hợp tác trên mạng, tuân thủ đạo đức văn hóa số, bảo vệ thông tin/dữ liệu cá nhân và biết vận dụng công nghệ giải quyết việc thực tế."
+            },
+            {
+                question: "Ứng dụng nào hiện nay được định danh là nền tảng quản lý Danh tính điện tử Quốc gia của công dân Việt Nam?",
+                options: [
+                    "VNeID (Bộ Công an)",
+                    "PC-Covid",
+                    "Zalo cá nhân",
+                    "Facebook Messenger"
+                ],
+                correctIndex: 0,
+                explanation: "VNeID do Bộ Công an phát triển là ứng dụng định danh điện tử chính thức, tích hợp thẻ căn cước, bảo hiểm y tế, giấy phép lái xe, tài khoản an sinh xã hội cho công dân số."
+            },
+            {
+                question: "Hành động nào sau đây thể hiện văn hóa ứng xử và trách nhiệm của một Công dân số văn minh?",
+                options: [
+                    "Chia sẻ ngay các tin tức giật gân, chưa kiểm chứng lên các hội nhóm mạng xã hội",
+                    "Cung cấp mật khẩu và mã OTP ngân hàng khi có người lạ tự xưng cán bộ liên hệ qua điện thoại",
+                    "Xác thực nguồn tin trước khi chia sẻ, tôn trọng bản quyền và bảo vệ quyền riêng tư cá nhân của người khác",
+                    "Sử dụng ngôn từ xúc phạm người khác khi ẩn danh trên các diễn đàn trực tuyến"
+                ],
+                correctIndex: 2,
+                explanation: "Công dân số văn minh có tinh thần trách nhiệm cao: luôn kiểm chứng sự thật tin tức (Fact-checking), nói không với tin giả, tôn trọng quyền riêng tư và ứng xử tôn trọng nhau trên không gian mạng."
+            },
+            {
+                question: "Khi phát hiện các dấu hiệu lừa đảo trực tuyến (lừa đảo số, tin nhắn rác, website giả mạo), công dân nên ưu tiên làm gì?",
+                options: [
+                    "Chuyển khoản ngay một khoản tiền nhỏ để kiểm tra tính xác thực",
+                    "Tuyệt đối không làm theo yêu cầu, báo cáo lên Cổng Không gian mạng Quốc gia (khonggianmang.vn) hoặc cơ quan chức năng",
+                    "Chia sẻ tài khoản của mình cho đối tượng để họ hỗ trợ kỹ thuật từ xa",
+                    "Xóa hết ứng dụng ngân hàng và không bao giờ dùng Internet nữa"
+                ],
+                correctIndex: 1,
+                explanation: "Để tự vệ số, công dân cần giữ bình tĩnh, tuyệt đối không cung cấp thông tin/OTP, đồng thời gửi phản ánh tới hệ thống Cảnh báo an toàn thông tin mạng quốc gia để kịp thời ngăn chặn các hành vi xâm hại."
+            }
+        ];
+    </script>
+
+    <script>
+        // State variables
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOption = null;
+        let timerInterval = null;
+        const TIME_LIMIT = 30;
+        let timeLeft = TIME_LIMIT;
+
+        // DOM elements
+        const startScreen = document.getElementById('startScreen');
+        const quizScreen = document.getElementById('quizScreen');
+        const resultScreen = document.getElementById('resultScreen');
+
+        const startBtn = document.getElementById('startBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const retryBtn = document.getElementById('retryBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const shareBtnText = document.getElementById('shareBtnText');
+
+        const soundToggleBtn = document.getElementById('soundToggleBtn');
+        const soundIcon = document.getElementById('soundIcon');
+        const soundText = document.getElementById('soundText');
+
+        const questionCounter = document.getElementById('questionCounter');
+        const progressBar = document.getElementById('progressBar');
+        const timerText = document.getElementById('timerText');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const explanationBox = document.getElementById('explanationBox');
+        const explanationTitle = document.getElementById('explanationTitle');
+        const explanationText = document.getElementById('explanationText');
+        const explanationIcon = document.getElementById('explanationIcon');
+        const currentScoreSpan = document.getElementById('currentScore');
+
+        const finalScore = document.getElementById('finalScore');
+        const finalAccuracy = document.getElementById('finalAccuracy');
+        const resultRankTitle = document.getElementById('resultRankTitle');
+        const resultDescription = document.getElementById('resultDescription');
+        const resultBadgeIcon = document.getElementById('resultBadgeIcon');
+
+        // Toggle Sound
+        soundToggleBtn.addEventListener('click', () => {
+            sound.enabled = !sound.enabled;
+            if (sound.enabled) {
+                soundIcon.setAttribute('data-lucide', 'volume-2');
+                soundText.textContent = 'Âm thanh: Bật';
+                soundToggleBtn.classList.remove('opacity-60');
+                sound.playClick();
+            } else {
+                soundIcon.setAttribute('data-lucide', 'volume-x');
+                soundText.textContent = 'Âm thanh: Tắt';
+                soundToggleBtn.classList.add('opacity-60');
+            }
+            lucide.createIcons();
+        });
+
+        // Start Quiz
+        startBtn.addEventListener('click', () => {
+            sound.playClick();
+            startScreen.classList.add('hidden');
+            resultScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+            currentQuestionIndex = 0;
+            score = 0;
+            currentScoreSpan.textContent = '0';
+            loadQuestion();
+        });
+
+        // Load Question Function
+        function loadQuestion() {
+            clearInterval(timerInterval);
+            selectedOption = null;
+            nextBtn.classList.add('hidden');
+            explanationBox.classList.add('hidden');
+
+            const q = quizQuestions[currentQuestionIndex];
+            questionCounter.textContent = `CÂU ${currentQuestionIndex + 1} / ${quizQuestions.length}`;
+            questionText.textContent = q.question;
+            progressBar.style.width = `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%`;
+
+            // Reset Timer
+            timeLeft = TIME_LIMIT;
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    handleTimeOut();
+                }
+            }, 1000);
+
+            // Populate Answer Choices
+            optionsContainer.innerHTML = '';
+            const labels = ['A', 'B', 'C', 'D'];
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = `choice-btn w-full p-4 rounded-2xl border border-slate-700/80 bg-slate-800/60 hover:bg-slate-800 hover:border-cyan-500/60 text-left flex items-start gap-3.5 group`;
+                btn.dataset.index = index;
+
+                btn.innerHTML = `
+                    <span class="flex-shrink-0 w-8 h-8 rounded-xl bg-slate-700/80 text-cyan-300 font-cyber font-bold text-xs flex items-center justify-center group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
+                        ${labels[index]}
+                    </span>
+                    <span class="text-sm font-medium text-slate-200 mt-1 leading-relaxed">
+                        ${opt}
+                    </span>
+                `;
+
+                btn.addEventListener('click', () => handleSelectOption(index));
+                optionsContainer.appendChild(btn);
+            });
+
+            lucide.createIcons();
+        }
+
+        function updateTimerDisplay() {
+            timerText.textContent = `${timeLeft}s`;
+            if (timeLeft <= 5) {
+                timerText.classList.add('text-rose-400', 'animate-pulse');
+                timerText.classList.remove('text-amber-400');
+            } else {
+                timerText.classList.remove('text-rose-400', 'animate-pulse');
+                timerText.classList.add('text-amber-400');
+            }
+        }
+
+        // Handle Option Selection
+        function handleSelectOption(selectedIndex) {
+            if (selectedOption !== null) return; // Prevent double select
+            clearInterval(timerInterval);
+            selectedOption = selectedIndex;
+
+            const q = quizQuestions[currentQuestionIndex];
+            const isCorrect = (selectedIndex === q.correctIndex);
+            const buttons = optionsContainer.querySelectorAll('button');
+
+            buttons.forEach((btn) => {
+                btn.disabled = true;
+                const idx = parseInt(btn.dataset.index);
+                if (idx === q.correctIndex) {
+                    btn.classList.remove('bg-slate-800/60', 'border-slate-700/80');
+                    btn.classList.add('bg-emerald-950/70', 'border-emerald-500', 'text-emerald-100');
+                    const badge = btn.querySelector('span');
+                    badge.classList.remove('bg-slate-700/80', 'text-cyan-300');
+                    badge.classList.add('bg-emerald-500', 'text-black');
+                } else if (idx === selectedIndex && !isCorrect) {
+                    btn.classList.remove('bg-slate-800/60', 'border-slate-700/80');
+                    btn.classList.add('bg-rose-950/70', 'border-rose-500', 'text-rose-100');
+                    const badge = btn.querySelector('span');
+                    badge.classList.remove('bg-slate-700/80', 'text-cyan-300');
+                    badge.classList.add('bg-rose-500', 'text-white');
+                } else {
+                    btn.classList.add('opacity-45');
+                }
+            });
+
+            if (isCorrect) {
+                score++;
+                currentScoreSpan.textContent = score;
+                sound.playCorrect();
+                showExplanation(true, q.explanation);
+            } else {
+                sound.playWrong();
+                showExplanation(false, q.explanation);
+            }
+
+            nextBtn.classList.remove('hidden');
+        }
+
+        // Handle Timeout event
+        function handleTimeOut() {
+            if (selectedOption !== null) return;
+            selectedOption = -1; // timed out
+            sound.playWrong();
+
+            const q = quizQuestions[currentQuestionIndex];
+            const buttons = optionsContainer.querySelectorAll('button');
+
+            buttons.forEach((btn) => {
+                btn.disabled = true;
+                const idx = parseInt(btn.dataset.index);
+                if (idx === q.correctIndex) {
+                    btn.classList.remove('bg-slate-800/60', 'border-slate-700/80');
+                    btn.classList.add('bg-emerald-950/70', 'border-emerald-500', 'text-emerald-100');
+                } else {
+                    btn.classList.add('opacity-45');
+                }
+            });
+
+            showExplanation(false, `Đã hết thời gian! ${q.explanation}`);
+            nextBtn.classList.remove('hidden');
+        }
+
+        // Show Explanation Box
+        function showExplanation(isCorrect, text) {
+            explanationBox.classList.remove('hidden');
+            if (isCorrect) {
+                explanationBox.className = 'mb-6 p-4 rounded-2xl border bg-emerald-950/40 border-emerald-500/40 text-emerald-200';
+                explanationTitle.textContent = 'CHÍNH XÁC! Tinh thần số sắc bén!';
+                explanationTitle.className = 'font-bold text-emerald-300';
+                explanationIcon.innerHTML = `<i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>`;
+            } else {
+                explanationBox.className = 'mb-6 p-4 rounded-2xl border bg-rose-950/40 border-rose-500/40 text-rose-200';
+                explanationTitle.textContent = 'CHƯA CHÍNH XÁC - CÙNG TÌM HIỂU THÊM:';
+                explanationTitle.className = 'font-bold text-rose-300';
+                explanationIcon.innerHTML = `<i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400"></i>`;
+            }
+            explanationText.textContent = text;
+            lucide.createIcons();
+        }
+
+        // Next Question Button handler
+        nextBtn.addEventListener('click', () => {
+            sound.playClick();
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizQuestions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        // Show Final Results & Evaluate Rank
+        function showResults() {
+            clearInterval(timerInterval);
+            quizScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+            sound.playFinish();
+
+            finalScore.textContent = `${score}/${quizQuestions.length}`;
+            const percentage = Math.round((score / quizQuestions.length) * 100);
+            finalAccuracy.textContent = `${percentage}%`;
+
+            let rank = "";
+            let desc = "";
+            let badgeBg = "";
+
+            if (score === 5) {
+                rank = "CÔNG DÂN SỐ TIÊN PHONG XUẤT SẮC";
+                desc = "Tuyệt vời! Bạn nắm vững toàn diện kiến thức, kỹ năng an toàn và văn hóa trên không gian mạng. Bạn là tấm gương công dân số tiêu biểu!";
+                badgeBg = "bg-gradient-to-tr from-amber-500 to-yellow-300 text-slate-950";
+                launchConfetti();
+            } else if (score >= 3) {
+                rank = "CÔNG DÂN SỐ NĂNG ĐỘNG";
+                desc = "Khá lắm! Bạn đã có nền tảng nhận thức số rất tốt. Hãy tiếp tục cập nhật công nghệ và giữ an toàn số để hoàn thiện bản thân mỗi ngày.";
+                badgeBg = "bg-gradient-to-tr from-cyan-500 to-blue-600 text-white";
+                launchConfetti(0.5);
+            } else {
+                rank = "CÔNG DÂN SỐ ĐANG KHỞI TẠO";
+                desc = "Không sao cả! Hãy tận dụng ngày 15/10 để tìm hiểu thêm về kỹ năng số, bảo mật tài khoản cá nhân và các tiện ích số quốc gia nhé.";
+                badgeBg = "bg-gradient-to-tr from-slate-600 to-slate-400 text-white";
+            }
+
+            resultRankTitle.textContent = `DANH HIỆU: ${rank}`;
+            resultDescription.textContent = desc;
+            resultBadgeIcon.className = `w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mx-auto rounded-2xl shadow-lg ${badgeBg}`;
+            lucide.createIcons();
+        }
+
+        // Confetti effect helper
+        function launchConfetti(intensity = 1) {
+            if (typeof confetti !== 'function') return;
+            const count = 200 * intensity;
+            const defaults = {
+                origin: { y: 0.7 }
+            };
+
+            function fire(particleRatio, opts) {
+                confetti(Object.assign({}, defaults, opts, {
+                    particleCount: Math.floor(count * particleRatio)
+                }));
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+            fire(0.2, {
+                spread: 60,
+            });
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+            });
+        }
+
+        // Retry Button
+        retryBtn.addEventListener('click', () => {
+            sound.playClick();
+            resultScreen.classList.add('hidden');
+            startScreen.classList.remove('hidden');
+        });
+
+        // Share result to clipboard
+        shareBtn.addEventListener('click', () => {
+            sound.playClick();
+            const textToCopy = `Tôi vừa đạt ${score}/${quizQuestions.length} điểm tại Thử Thách Tìm Hiểu Ngày Công Dân Số Việt Nam 15/10! Cùng thử sức nhé!`;
+            
+            // Safe copy method
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                shareBtnText.textContent = 'Đã sao chép liên kết!';
+                setTimeout(() => {
+                    shareBtnText.textContent = 'Lan Tỏa Thông Điệp';
+                }, 2500);
+            } catch (err) {
+                shareBtnText.textContent = 'Chưa sao chép được';
+            }
+            document.body.removeChild(tempInput);
+        });
+
+        // Initial icon compilation
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
